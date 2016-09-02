@@ -11,63 +11,64 @@ def register(cost, payment):
 		item = items[3]
 	elif(cost == 5):
 		item = items[4]
-	return float(payment - item)
+	return float("{0:.2f}".format(payment - item))
 
 def change_machine(change):
-	if(change == 0.0):
+	change = float("{0:.2f}".format(change))
+	if(change <= 0.0):
 		return
-	elif(change > 20):
+	elif(change >= 20):
 		bills = 0
-		while(change > 20):
+		while(change >= 20):
 			bills+=1
 			change-=20
 		print(str(bills), '$20 dollar bills')
 		return change_machine(change)
-	elif(change > 10):
+	elif(change >= 10):
 		bills = 0
-		while(change > 10):
+		while(change >= 10):
 			bills+=1
 			change-=10
 		print(str(bills), '$10 dollar bills')
 		return change_machine(change)
-	elif(change > 5):
+	elif(change >= 5):
 		bills = 0
-		while(change > 5):
+		while(change >= 5):
 			bills+=1
 			change-=5
 		print(str(bills), '$5 dollar bills')
 		return change_machine(change)
-	elif(change > 1):
+	elif(change >= 1):
 		bills = 0
-		while(change > 1):
+		while(change >= 1):
 			bills+=1
 			change-=1
 		print(str(bills), '$1 dollar bills')
 		return change_machine(change)
-	elif(change > 0.25):
+	elif(change >= 0.25):
 		coins = 0
-		while(change > .25):
+		while(change >= .25):
 			coins+=1
 			change-=0.25
 		print(str(coins), 'quarters')
 		return change_machine(change)
-	elif(change > 0.10):
+	elif(change >= 0.10):
 		coins = 0
-		while(change > .10):
+		while(change >= .10):
 			coins+=1
 			change-=0.10
 		print(str(coins), 'dimes')
 		return change_machine(change)
-	elif(change > 0.05):
+	elif(change >= 0.05):
 		coins = 0
-		while(change > .05):
+		while(change >= .05):
 			coins+=1
 			change-=0.05
 		print(str(coins), 'nickels')
 		return change_machine(change)
-	elif(change > 0.01):
+	elif(change >= 0.01):
 		coins = 0
-		while(change > .01):
+		while(change >= .01):
 			coins+=1
 			change-=0.01
 		print(str(coins), 'pennies')
